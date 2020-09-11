@@ -89,7 +89,8 @@ class EBMUtils:
                 n_test_samples = test_size if test_size >= 1 else len(y) * test_size
                 if n_test_samples < y_uniq:  # pragma: no cover
                     warnings.warn(
-                        "Too few samples per class, adapting test size to guarantee 1 sample per class."
+                        "Too few samples per class, adapting test size to guarantee 1 sample per class.",
+                        UserWarning
                     )
                     test_size = y_uniq
 
